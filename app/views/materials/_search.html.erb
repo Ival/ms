@@ -1,4 +1,6 @@
-<%= search_field_tag('materials') %>
-<%= link_to do %>
-	<span class='btn btn-primary', style='margin-bottom:8px;'>Search</span>
-<% end  %>
+<form class="well form-search">
+  <input type="text" class="input-medium search-query">
+  <%= link_to do %>
+	  <button type="submit" class="btn"><i class='icon-search'></i>Search</button>
+	<% end  %>
+</form>

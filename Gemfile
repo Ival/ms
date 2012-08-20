@@ -12,6 +12,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'rmagick'
 gem 'carrierwave'
+#gem 'kaminari'
 
 
 # Gems used only for assets and not required

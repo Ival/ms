@@ -5,10 +5,14 @@ class MaterialsController < ApplicationController
 
   def create
  		@material = Material.new params[:material] 	
- 		if @material.save
- 			redirect_to @material, notice: 'Material was successfully created.'
- 		else
- 			render action: "new"
- 		end
+ 		notice_str = @material.save ? 'Material was successfully created.' : 'Material was unsuccessfully created.'
+ 		redirect_to Material, notice: notice_str
+  end
+  
+  def destroy
+  	@material = Material.find params[:id]
+  	@material.destroy
+  	
+  	redirect_to materials_url
   end
 end
