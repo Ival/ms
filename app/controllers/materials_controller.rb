@@ -1,6 +1,6 @@
 class MaterialsController < ApplicationController
   def index
-  	@materials = Material.all
+  	@materials = Material.page(params[:page]).per(10)
   end
 
   def create

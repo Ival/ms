@@ -11,6 +11,7 @@
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
     	<%= render :partial => "list" %>
+      <%= paginate @materials, :window => 3 %>
     </div>
     <div class="tab-pane" id="tab2">
     	<%= render :partial => "form" %>
