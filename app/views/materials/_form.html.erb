@@ -1,0 +1,13 @@
+<%= simple_form_for (@material ||= Material.new) do |f| %>
+  <%= f.input :number %>
+  <%= f.input :name %>
+  <%= f.input :image %>
+  <%= f.input :price %>
+  <%= f.input :remark %>
+  
+	<% if controller_name == "materials" && action_name == "index" %>
+		<%= f.submit "Save", :class => "btn btn-primary" %>
+	<% elsif controller_name == "materials" && action_name == "show" %>
+		<%= redirect_to :index %>
+	<% end %> 
+<% end %>

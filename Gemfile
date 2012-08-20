@@ -8,11 +8,18 @@ gem 'rails', '3.2.7'
 gem 'sqlite3'
 gem 'exec'
 gem 'therubyracer'
+gem 'devise'
+gem 'simple_form'
+gem 'rmagick'
+gem 'carrierwave'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'sass'
+  gem 'bootstrap-sass'
+  gem 'compass'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 

@@ -7,8 +7,53 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="navbar navbar-fixed-top">
+		<div class='navbar-inner'>
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a href="#" class='brand'>Index</a>
+				<div class ="nav-collapse">
+					<ul class='nav'>
+						<li><%= link_to "Materials", materials_path %></li>
+						<li><%= link_to "User" %></li>
+					</ul>
+					<ul class='nav pull-right'>
+						<% if user_signed_in? %>
+							<li><%= link_to current_user.email, edit_user_registration_path %></li>
+							<li>
+								<%= link_to(destroy_user_session_path, :method => 'delete') do  %>
+									<span class='label label-important'>Log out</span>
+								<% end %>
+							</li>
+						<% else %>
+							<li>
+								<%= link_to(new_user_session_path) do %>
+									<span class='label label-important'>Sign in</span>
+								<% end %>
+							</li>
+							<li>
+								<%= link_to(new_user_registration_path) do %>
+									<span class='label label-success'>Sign up</span>
+								<% end %>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+		</div>
+	</div>
+	<div class='container-fluid'>
+		<div class='row-fluid'>
+			<div class='span3'>
+				<%= yield :search %>
+			</div>
+			<div class='span9'>
+				<%= yield %>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

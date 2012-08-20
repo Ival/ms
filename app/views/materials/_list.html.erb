@@ -1,0 +1,25 @@
+<table class='table table-bordered table-striped'>
+	<thead>
+		<tr>
+			<th>Number</th>
+			<th>Name</th>
+			<th>Image</th>
+			<th>Price</th>
+			<th>Remark</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<% @materials.each do |material| %>
+		<tr>
+			<td><%= material.number %></td>
+			<td><%= material.name %></td>
+			<td><%= image_tag material.image_url(:thumb).to_s %></td>
+			<td><%= material.price %></td>
+			<td><%= material.remark %></td>
+			<td>
+				<a href="#" class='btn btn-mini btn-primary'>Show</a>
+				<a href="#" class='btn btn-mini btn-danger'>Delete</a>
+			</td>
+		</tr>
+	<% end %>
+</table>
