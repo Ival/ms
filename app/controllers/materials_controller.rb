@@ -1,6 +1,8 @@
 class MaterialsController < ApplicationController
   def index
-  	@materials = Material.page(params[:page]).per(10)
+    @search = Material.search(params[:q])
+    @search.build_condition if @search.conditions.empty?
+  	@materials = @search.result.page(params[:page]).per(5)
   end
 
   def create

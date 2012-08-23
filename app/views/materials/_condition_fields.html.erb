@@ -1,0 +1,12 @@
+<div class="field">
+  <%= f.attribute_fields do |a| %>
+    <%= a.attribute_select({}, {:class => "condition-field-attributes"}) %>
+  <% end %>
+  <%= f.predicate_select({}, {:class => "condition-field-predicates"}) %>
+  <%= f.value_fields do |v| %>
+    <%= v.text_field :value, :class => "condition-field-values" %>
+  <% end %>
+  <%= link_to('#', class: "remove_fields") do %>
+  	<i class='icon-remove-circle remove-condition' rel='tooltip' title='remove'></i>
+  <% end %>
+</div>

@@ -9,6 +9,7 @@
 			<th>Action</th>
 		</tr>
 	</thead>
+	<%= render :partial => "material", :collection => @materials %>
 	<% @materials.each do |material| %>
 		<tr>
 			<td><%= material.number %></td>

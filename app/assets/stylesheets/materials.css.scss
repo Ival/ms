@@ -5,3 +5,31 @@
 .show-field {
 	padding: 10px 0px;
 }
+.table .dl-horizontal dt {
+	width: 70px;
+}
+.table .dl-horizontal dd {
+	margin-left: 80px;
+}
+.table .dl-horizontal {
+	margin: 0px;
+}
+.table .icon-tag {
+	cursor: pointer;
+}
+.table .icon-tags {
+	cursor: pointer;
+}
+
+.condition-field-attributes {
+	width: 75px;
+}
+.condition-field-predicates {
+	width: 70px;
+}
+.condition-field-values {
+	width: 80px;
+}
+.icon-remove-circle:hover {
+	cursor: pointer;
+}

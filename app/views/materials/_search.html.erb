@@ -1,6 +1,15 @@
 <form class="well form-search">
-  <input type="text" class="input-medium search-query">
-  <%= link_to do %>
+	<input type="text" class="input-medium search-query" placeholder='编号、描述、物料和包装'>
+	<%= link_to do %>
 	  <button type="submit" class="btn"><i class='icon-search'></i>Search</button>
 	<% end  %>
+</form>
+<form class="well form-horizontal">
+	<%= search_form_for @search do |f| %>
+		<%= f.condition_fields do |c| %>
+			<%= render "condition_fields", f: c %>
+		<% end %>
+		<p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+	  <button type="submit" class="btn"><i class='icon-search'></i>Search</button>
+	<% end %>
 </form>

@@ -8,11 +8,14 @@ gem 'rails', '3.2.7'
 gem 'sqlite3'
 gem 'exec'
 gem 'therubyracer'
+gem 'pry'
 gem 'devise'
 gem 'simple_form'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'datagrid'
+gem 'ransack'
 
 
 # Gems used only for assets and not required

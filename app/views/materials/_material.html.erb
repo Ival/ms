@@ -1,0 +1,117 @@
+<tr>
+	<td>
+		<i class='icon icon-tag'></i>
+		<%= material.number %>
+	</td>
+	<td><%= image_tag material.image_url(:thumb).to_s %></td>
+	<td>silicone bakeware</td>
+	<td>
+		<dl class='dl-horizontal'>
+			<dt><%= "Material" %>:</dt>
+			<dd><%= "silicone" %></dd>
+			<dt><%= "FDA" %>:</dt>
+			<dd><%= "US$#{material.price}" %></dd>
+			<dt><%= "LFGB" %>:</dt>
+			<dd><%= "US$#{material.price}" %></dd>
+		</dl>
+	</td>
+	<td>
+		<dl class='dl-horizontal'>
+			<dt><%= "Packing" %>:</dt>
+			<dd><%= "ploybag" %></dd>
+			<dt><%= "Count" %>:</dt>
+			<dd>1</dd>
+		</dl>
+	</td>
+	<td>
+		<dl class='dl-horizontal'>
+			<dt><%= "Size" %>:</dt>
+			<dd><%= "33x25x3" %></dd>
+			<dt><%= "Weight" %>:</dt>
+			<dd><%= "222" %></dd>
+		</dl>
+	</td>
+	<td>
+		<a class='btn btn-mini btn-primary' data-toggle='modal' href='#show-material' >Show</a>
+		<a class='btn btn-mini btn-danger' data-toggle='modal' href='#delete-material' >Delete</a>
+		<div data-target='#foo' id='show-material' class='modal hide' >
+			<div class='modal-header'>
+				<a class='close' data-dismiss='modal'><i class='icon-remove'></i></a>
+				<h3><span class='badge badge-info'>Material Info</span></h3>
+			</div>
+			<div class='modal-body'>
+				<dl>
+				  <dt class='label'><%= Material.human_attribute_name(:number) %>:</dt>
+				  <dd class='show-field'><%= material.number %></dd>
+				  <dt class='label'><%= Material.human_attribute_name(:name) %>:</dt>
+				  <dd class='show-field'><%= material.name %></dd>
+				  <dt class='label'><%= Material.human_attribute_name(:image) %>:</dt>
+				  <dd class='show-field'><%= image_tag material.image_url(:max_area).to_s %></dd>
+				  <dt class='label'><%= Material.human_attribute_name(:price) %>:</dt>
+				  <dd class='show-field'><%= material.price %></dd>
+				</dl>
+			</div>
+			<div class='modal-footer'>
+				<a href="#" class='btn' data-dismiss='modal'><i class='icon-remove'></i>Close</a>
+			</div>
+		</div>
+		<div data-target='#foo' id='delete-material' class='modal hide'>
+			<div class='modal-header'>
+				<a class='close icon-remove' data-dismiss='modal'></a>
+				<h3><span class='badge badge-warning'>Warning</span></h3>
+			</div>
+			<div class='modal-body'> Are you sure you want to delete this material? </div>
+			<div class='modal-footer'>
+				<%= link_to material, :method => :delete do %>
+					<span class='btn btn-danger' data-dismiss='modal'>
+						<i class="icon-ok icon-white"></i>
+						Yes, I'm sure
+					</span>
+				<% end %>
+				<a href="#" class='btn' data-dismiss='modal'>
+					<i class='icon-remove'></i>
+					Cancel
+				</a>
+			</div>
+		</div>
+	</td>
+</tr>
+<tr class='extra-info hide'>
+	<td colspan=7>
+		<table class='.table'>
+			<thead>
+				<th>Carton(cm)</th>
+				<th>PCS/CTN</th>
+				<th>CBM(m3)</th>
+				<th>CW(kgs)</th>
+				<th>MOQ</th>
+				<th>PCS/40"Cp</th>
+				<th>Remark</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<table>
+							<tr>
+								<th>L</th>
+								<th>W</th>
+								<th>H</th>
+							</tr>
+							<tr>
+								<td>30</td>
+								<td>50</td>
+								<td>48</td>
+							</tr>
+						</table>
+					</td>
+					<td>44</td>
+					<td>0.079</td>
+					<td>10.8</td>
+					<td>3000</td>
+					<td>32.222</td>
+					<td>FOB YANTIAN</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>

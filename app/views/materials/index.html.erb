@@ -1,6 +1,6 @@
 <%= content_for :search do %>
 	<legend>Material</legend>
-	<%= render "search" %>
+	<%= render "search", :object => @search %>
 <% end %>
 
 <div class="tabbable">
@@ -10,7 +10,20 @@
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
-    	<%= render :partial => "list" %>
+      <table class='table table-bordered table-striped table-condensed'>
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Info</th>
+            <th>Unit Price</th>
+            <th>Other Info</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <%= render :partial => "material", :collection => @materials %>
+      </table>
       <%= paginate @materials, :window => 3 %>
     </div>
     <div class="tab-pane" id="tab2">
